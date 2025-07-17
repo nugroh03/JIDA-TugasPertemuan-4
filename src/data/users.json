@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "name": "Admin Utama",
+    "email": "admin@marinaboat.com",
+    "password": "adminpassword123",
+    "role": "admin"
+  },
+  {
+    "id": 2,
+    "name": "Budi Santoso",
+    "email": "budi.s@example.com",
+    "password": "userpassword456",
+    "role": "user"
+  }
+]
+

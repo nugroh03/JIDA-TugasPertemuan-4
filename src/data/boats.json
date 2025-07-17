@@ -1,0 +1,382 @@
+[
+  {
+    "id": 1,
+    "name": "Ocean Explorer",
+    "type": "Kapal Wisata",
+    "category": "wisata",
+    "capacity": 25,
+    "price": "Rp 2.500.000",
+    "priceNum": 2500000,
+    "image": "/boats/ocean_explore.png",
+    "gallery": [
+      "/boats/ocean_explore.png",
+      "/boats/ocean_explore.png",
+      "/boats/ocean_explore.png"
+    ],
+    "rating": 4.8,
+    "reviews": 24,
+    "description": "Ocean Explorer adalah kapal wisata mewah yang sempurna untuk menjelajahi keindahan laut Indonesia. Dengan desain modern dan fasilitas lengkap, kapal ini menawarkan pengalaman berlayar yang tak terlupakan.",
+    "features": [
+      { "name": "Wi-Fi Gratis", "icon": "wifi" },
+      { "name": "AC", "icon": "wind" },
+      { "name": "Katering", "icon": "utensils" },
+      { "name": "Sound System", "icon": "music" },
+      { "name": "Peralatan Keselamatan", "icon": "shield" },
+      { "name": "GPS Navigation", "icon": "anchor" }
+    ],
+    "specifications": {
+      "Panjang": "15 meter",
+      "Lebar": "4 meter",
+      "Mesin": "2 x 200 HP",
+      "Kecepatan": "25 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "2 unit"
+    },
+    "includes": [
+      "Kapten dan crew berpengalaman",
+      "Peralatan keselamatan lengkap",
+      "Bahan bakar untuk 8 jam",
+      "Air mineral dan snack",
+      "Peralatan snorkeling",
+      "Asuransi perjalanan"
+    ],
+    "destinations": [
+      "Pulau Nusa Penida",
+      "Pulau Menjangan",
+      "Blue Lagoon",
+      "Crystal Bay",
+      "Broken Beach"
+    ],
+    "duration": "8 jam"
+  },
+  {
+    "id": 2,
+    "name": "Fishing Master",
+    "type": "Kapal Pancing",
+    "category": "pancing",
+    "capacity": 12,
+    "price": "Rp 1.800.000",
+    "priceNum": 1800000,
+    "image": "/boats/fishing_master.png",
+    "gallery": [
+      "/boats/fishing_master.png",
+      "/boats/fishing_master.png",
+      "/boats/fishing_master.png"
+    ],
+    "rating": 4.9,
+    "reviews": 31,
+    "description": "Fishing Master adalah kapal pancing profesional yang dilengkapi dengan peralatan mancing terbaik. Cocok untuk para pecinta mancing yang ingin merasakan sensasi memancing di laut lepas.",
+    "features": [
+      { "name": "Fish Finder", "icon": "anchor" },
+      { "name": "Peralatan Pancing", "icon": "shield" },
+      { "name": "Cooler Box", "icon": "fuel" },
+      { "name": "Tenda Pelindung", "icon": "wind" },
+      { "name": "Umpan Hidup", "icon": "utensils" },
+      { "name": "Sound System", "icon": "music" }
+    ],
+    "specifications": {
+      "Panjang": "12 meter",
+      "Lebar": "3.5 meter",
+      "Mesin": "1 x 150 HP",
+      "Kecepatan": "20 knot",
+      "Bahan Bakar": "Bensin",
+      "Toilet": "1 unit"
+    },
+    "includes": [
+      "Kapten dan pemandu pancing",
+      "Peralatan pancing lengkap",
+      "Umpan hidup dan buatan",
+      "Cooler box dengan es",
+      "Bahan bakar untuk 6 jam",
+      "Sertifikat ikan hasil tangkapan"
+    ],
+    "destinations": [
+      "Spot Pancing Tuna",
+      "Spot Pancing Marlin",
+      "Spot Pancing Mahi-mahi",
+      "Spot Pancing Kerapu",
+      "Spot Pancing Kakap"
+    ],
+    "duration": "6 jam"
+  },
+  {
+    "id": 3,
+    "name": "Sunset Cruiser",
+    "type": "Kapal Wisata",
+    "category": "wisata",
+    "capacity": 35,
+    "price": "Rp 3.200.000",
+    "priceNum": 3200000,
+    "image": "/boats/sunset_cruiser.png",
+    "gallery": [
+      "/boats/sunset_cruiser.png",
+      "/boats/sunset_cruiser.png",
+      "/boats/sunset_cruiser.png"
+    ],
+    "rating": 4.7,
+    "reviews": 18,
+    "description": "Sunset Cruiser adalah kapal wisata premium yang dirancang khusus untuk menikmati sunset dan acara-acara spesial. Dengan deck yang luas dan fasilitas mewah, kapal ini perfect untuk celebration.",
+    "features": [
+      { "name": "Bar & Lounge", "icon": "utensils" },
+      { "name": "DJ Sound System", "icon": "music" },
+      { "name": "AC Lounge", "icon": "wind" },
+      { "name": "Wi-Fi Premium", "icon": "wifi" },
+      { "name": "Sunset Deck", "icon": "shield" },
+      { "name": "LED Lighting", "icon": "anchor" }
+    ],
+    "specifications": {
+      "Panjang": "18 meter",
+      "Lebar": "5 meter",
+      "Mesin": "2 x 250 HP",
+      "Kecepatan": "30 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "3 unit"
+    },
+    "includes": [
+      "Kapten dan crew profesional",
+      "Welcome drink dan canapes",
+      "DJ dan sound system",
+      "Peralatan photo booth",
+      "Bahan bakar untuk 4 jam",
+      "Dekorasi sunset dinner"
+    ],
+    "destinations": [
+      "Sunset Point Sanur",
+      "Sunset Point Jimbaran",
+      "Sunset Point Tanah Lot",
+      "Sunset Point Uluwatu",
+      "Sunset Point Canggu"
+    ],
+    "duration": "4 jam"
+  },
+  {
+    "id": 4,
+    "name": "Deep Sea Hunter",
+    "type": "Kapal Pancing",
+    "category": "pancing",
+    "capacity": 8,
+    "price": "Rp 2.200.000",
+    "priceNum": 2200000,
+    "image": "/boats/deep_sea_hunter.png",
+    "gallery": [
+      "/boats/deep_sea_hunter.png",
+      "/boats/deep_sea_hunter.png",
+      "/boats/deep_sea_hunter.png"
+    ],
+    "rating": 4.9,
+    "reviews": 27,
+    "description": "Kapal pancing laut dalam untuk menangkap ikan besar dengan peralatan profesional",
+    "features": [
+      { "name": "Deep Sea Equipment", "icon": "anchor" },
+      { "name": "Sonar", "icon": "shield" },
+      { "name": "Live Bait Tank", "icon": "fuel" },
+      { "name": "Fighting Chair", "icon": "wind" }
+    ],
+    "specifications": {
+      "Panjang": "14 meter",
+      "Lebar": "4 meter",
+      "Mesin": "2 x 180 HP",
+      "Kecepatan": "22 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "1 unit"
+    },
+    "includes": [
+      "Kapten dan crew ahli",
+      "Peralatan deep sea fishing",
+      "Live bait dan artificial lures",
+      "Fighting chair dan harness",
+      "Bahan bakar untuk 10 jam",
+      "Fish cleaning service"
+    ],
+    "destinations": [
+      "Deep Sea Zone",
+      "Tuna Ground",
+      "Marlin Territory"
+    ],
+    "duration": "10 jam"
+  },
+  {
+    "id": 5,
+    "name": "Island Hopper",
+    "type": "Kapal Wisata",
+    "category": "wisata",
+    "capacity": 20,
+    "price": "Rp 2.800.000",
+    "priceNum": 2800000,
+    "image": "/boats/island_hopper.png",
+    "gallery": [
+      "/boats/island_hopper.png",
+      "/boats/island_hopper.png",
+      "/boats/island_hopper.png"
+    ],
+    "rating": 4.6,
+    "reviews": 22,
+    "description": "Kapal wisata untuk island hopping dan snorkeling di pulau-pulau eksotis",
+    "features": [
+      { "name": "Snorkeling Gear", "icon": "shield" },
+      { "name": "Beach Landing", "icon": "anchor" },
+      { "name": "Lunch Package", "icon": "utensils" },
+      { "name": "Photo Service", "icon": "music" }
+    ],
+    "specifications": {
+      "Panjang": "13 meter",
+      "Lebar": "3.8 meter",
+      "Mesin": "1 x 180 HP",
+      "Kecepatan": "24 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "2 unit"
+    },
+    "includes": [
+      "Kapten dan tour guide",
+      "Peralatan snorkeling lengkap",
+      "Lunch box dan minuman",
+      "Underwater camera rental",
+      "Bahan bakar untuk 8 jam",
+      "Island entrance fees"
+    ],
+    "destinations": [
+      "Gili Islands",
+      "Menjangan",
+      "Sekotong"
+    ],
+    "duration": "8 jam"
+  },
+  {
+    "id": 6,
+    "name": "Family Cruiser",
+    "type": "Kapal Wisata",
+    "category": "wisata",
+    "capacity": 15,
+    "price": "Rp 2.000.000",
+    "priceNum": 2000000,
+    "image": "/boats/family_cruiser.png",
+    "gallery": [
+      "/boats/family_cruiser.png",
+      "/boats/family_cruiser.png",
+      "/boats/family_cruiser.png"
+    ],
+    "rating": 4.8,
+    "reviews": 35,
+    "description": "Kapal wisata ramah keluarga dengan fasilitas khusus untuk anak-anak",
+    "features": [
+      { "name": "Kid Safety", "icon": "shield" },
+      { "name": "Family Deck", "icon": "anchor" },
+      { "name": "Games", "icon": "music" },
+      { "name": "Snacks", "icon": "utensils" }
+    ],
+    "specifications": {
+      "Panjang": "11 meter",
+      "Lebar": "3.5 meter",
+      "Mesin": "1 x 120 HP",
+      "Kecepatan": "18 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "1 unit"
+    },
+    "includes": [
+      "Kapten dan babysitter",
+      "Life jackets untuk anak",
+      "Kids entertainment kit",
+      "Family snack package",
+      "Bahan bakar untuk 6 jam",
+      "First aid kit"
+    ],
+    "destinations": [
+      "Pantai Pandawa",
+      "Turtle Island",
+      "Dolphin Bay"
+    ],
+    "duration": "6 jam"
+  },
+  {
+    "id": 7,
+    "name": "Sport Fisher Pro",
+    "type": "Kapal Pancing",
+    "category": "pancing",
+    "capacity": 10,
+    "price": "Rp 2.600.000",
+    "priceNum": 2600000,
+    "image": "/boats/sport_fisher_pro.png",
+    "gallery": [
+      "/boats/sport_fisher_pro.png",
+      "/boats/sport_fisher_pro.png",
+      "/boats/sport_fisher_pro.png"
+    ],
+    "rating": 4.9,
+    "reviews": 19,
+    "description": "Kapal pancing sport fishing dengan standar turnamen untuk pengalaman memancing premium",
+    "features": [
+      { "name": "Tournament Grade", "icon": "shield" },
+      { "name": "Multiple Rods", "icon": "anchor" },
+      { "name": "Fish Cleaning", "icon": "utensils" },
+      { "name": "Ice Storage", "icon": "fuel" }
+    ],
+    "specifications": {
+      "Panjang": "16 meter",
+      "Lebar": "4.2 meter",
+      "Mesin": "2 x 220 HP",
+      "Kecepatan": "28 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "2 unit"
+    },
+    "includes": [
+      "Professional fishing captain",
+      "Tournament grade equipment",
+      "Premium bait selection",
+      "Fish cleaning and packing",
+      "Bahan bakar untuk 8 jam",
+      "Fishing license"
+    ],
+    "destinations": [
+      "Wahoo Ground",
+      "Dorado Zone",
+      "Billfish Area"
+    ],
+    "duration": "8 jam"
+  },
+  {
+    "id": 8,
+    "name": "Luxury Yacht",
+    "type": "Kapal Wisata",
+    "category": "wisata",
+    "capacity": 40,
+    "price": "Rp 5.000.000",
+    "priceNum": 5000000,
+    "image": "/boats/luxury_yacht.png",
+    "gallery": [
+      "/boats/luxury_yacht.png",
+      "/boats/luxury_yacht.png",
+      "/boats/luxury_yacht.png"
+    ],
+    "rating": 4.9,
+    "reviews": 12,
+    "description": "Yacht mewah dengan fasilitas premium untuk acara eksklusif dan perayaan spesial",
+    "features": [
+      { "name": "VIP Cabin", "icon": "shield" },
+      { "name": "Chef Service", "icon": "utensils" },
+      { "name": "Jacuzzi", "icon": "wind" },
+      { "name": "Helicopter Pad", "icon": "anchor" }
+    ],
+    "specifications": {
+      "Panjang": "25 meter",
+      "Lebar": "6 meter",
+      "Mesin": "2 x 400 HP",
+      "Kecepatan": "35 knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "4 unit"
+    },
+    "includes": [
+      "Professional crew team",
+      "Personal chef service",
+      "Premium beverage package",
+      "Luxury amenities",
+      "Bahan bakar untuk 12 jam",
+      "Concierge service"
+    ],
+    "destinations": [
+      "Private Islands",
+      "Exclusive Bays",
+      "Luxury Resorts"
+    ],
+    "duration": "12 jam"
+  }
+]
