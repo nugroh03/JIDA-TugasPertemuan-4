@@ -21,12 +21,14 @@ const BoatCard: React.FC<BoatCardProps> = ({
     >
       <div className='relative'>
         <div className='relative h-48'>
-          <Image
-            src={boat.image}
-            alt={boat.name}
-            fill
-            className='object-cover'
-          />
+          {boat.name != '' && boat.image != '' && (
+            <Image
+              src={boat.image}
+              alt={boat.name}
+              fill
+              className='object-cover'
+            />
+          )}
         </div>
         <div className='absolute top-3 left-3'>
           <span
