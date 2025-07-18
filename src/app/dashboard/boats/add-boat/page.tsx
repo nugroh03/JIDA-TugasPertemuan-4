@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import React, { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import {
   Wifi,
   Wind,
@@ -9,27 +9,15 @@ import {
   Music,
   ShieldCheck,
   Anchor,
-  Star,
-  CheckCircle2,
-  MapPin,
   Plus,
   Trash2,
   Save,
   ArrowLeft,
   Loader2,
+  CheckCircle2,
 } from 'lucide-react';
-import { Boat, BoatFeature } from '@/types';
 
 // Mapping ikon
-const iconMap: Record<string, React.ElementType> = {
-  wifi: Wifi,
-  wind: Wind,
-  utensils: Utensils,
-  music: Music,
-  shield: ShieldCheck,
-  anchor: Anchor,
-};
-
 const iconOptions = [
   { value: 'wifi', label: 'WiFi', icon: Wifi },
   { value: 'wind', label: 'AC', icon: Wind },
@@ -39,12 +27,8 @@ const iconOptions = [
   { value: 'anchor', label: 'Jangkar', icon: Anchor },
 ];
 
-export default function BoatEditPage() {
-  const params = useParams();
+export default function AddBoatPage() {
   const router = useRouter();
-  const boatId = parseInt(params.id as string, 10);
-
-  const [isLoading, setIsLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
@@ -53,13 +37,14 @@ export default function BoatEditPage() {
   const [formData, setFormData] = useState({
     name: '',
     type: '',
-    capacity: 0,
+    category: 'wisata',
+    capacity: 1,
     duration: '',
     price: '',
-    priceNum: 0,
-    rating: 0,
+    rating: 4.0,
     reviews: 0,
     description: '',
+    image: '',
     gallery: [''],
     features: [{ name: '', icon: 'wifi' }],
     includes: [''],
@@ -70,78 +55,18 @@ export default function BoatEditPage() {
       'Mesin': '',
       'Kecepatan': '',
       'Bahan Bakar': '',
-      'Tahun Pembuatan': '',
+      'Toilet': '',
     },
   });
 
-  // Fetch data kapal untuk ditampilkan di form
-  useEffect(() => {
-    const fetchBoat = async () => {
-      try {
-        setIsLoading(true);
-        const response = await fetch(`/api/v1/boats/${boatId}`);
-        if (!response.ok) {
-          throw new Error(`Gagal mengambil data kapal: ${response.status}`);
-        }
-
-        const result = await response.json();
-        const boatData: Boat = result.data;
-
-        // Set form data dengan data yang sudah ada
-        setFormData({
-          name: boatData.name,
-          type: boatData.type,
-          capacity: boatData.capacity,
-          duration: boatData.duration,
-          price: boatData.price,
-          priceNum: boatData.priceNum || 0,
-          rating: boatData.rating,
-          reviews: boatData.reviews,
-          description: boatData.description,
-          gallery: boatData.gallery,
-          features: boatData.features,
-          includes: boatData.includes,
-          destinations: boatData.destinations,
-          specifications: boatData.specifications,
-        });
-      } catch (error: any) {
-        setError(error.message || 'Terjadi kesalahan saat memuat data kapal.');
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    if (!isNaN(boatId)) {
-      fetchBoat();
-    }
-  }, [boatId]);
-
-  // Handle input changes
-  const handleInputChange = (field: string, value: any) => {
-    // Jika field yang diubah adalah price, update juga priceNum
-    if (field === 'price') {
-      const priceNum = extractPriceNumber(value);
-      setFormData((prev) => ({
-        ...prev,
-        [field]: value,
-        priceNum: priceNum,
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [field]: value,
-      }));
-    }
-  };
-
   // Fungsi untuk mengekstrak angka dari format harga Indonesia
   const extractPriceNumber = (priceString: string): number => {
-    // Hapus semua karakter non-digit
     const numbers = priceString.replace(/[^\d]/g, '');
     return numbers ? parseInt(numbers, 10) : 0;
   };
 
-  const handleInputChangeOld = (field: string, value: any) => {
+  // Handle input changes
+  const handleInputChange = (field: string, value: any) => {
     setFormData((prev) => ({
       ...prev,
       [field]: value,
@@ -183,7 +108,7 @@ export default function BoatEditPage() {
     }));
   };
 
-  // Submit form untuk update data
+  // Submit form untuk menambah kapal baru
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -202,18 +127,18 @@ export default function BoatEditPage() {
       setError(null);
       setSuccessMessage(null);
 
-      // Filter URL kosong dari galeri
+      // Bersihkan data dan tambahkan priceNum
       const cleanedFormData = {
         ...formData,
-        priceNum: extractPriceNumber(formData.price), // Pastikan priceNum selalu terupdate
+        priceNum: extractPriceNumber(formData.price),
         gallery: formData.gallery.filter((url) => url.trim()),
         includes: formData.includes.filter((item) => item.trim()),
         destinations: formData.destinations.filter((dest) => dest.trim()),
         features: formData.features.filter((feature) => feature.name.trim()),
       };
 
-      const response = await fetch(`/api/v1/boats/${boatId}`, {
-        method: 'PUT',
+      const response = await fetch('/api/v1/boats', {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -223,50 +148,23 @@ export default function BoatEditPage() {
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(
-          errorData.message || `Gagal mengupdate kapal: ${response.status}`
+          errorData.message || `Gagal menambah kapal: ${response.status}`
         );
       }
 
-      setSuccessMessage('Data kapal berhasil diperbarui!');
+      const result = await response.json();
+      setSuccessMessage('Kapal baru berhasil ditambahkan!');
 
-      // Redirect kembali ke halaman detail setelah 2 detik
+      // Redirect ke halaman manage boats setelah 2 detik
       setTimeout(() => {
-        router.push(`/boats/${boatId}`);
+        router.push('/dashboard/boats');
       }, 2000);
     } catch (error: any) {
-      setError(error.message || 'Gagal mengupdate data kapal.');
+      setError(error.message || 'Gagal menambah kapal baru.');
     } finally {
       setIsSubmitting(false);
     }
   };
-
-  if (isLoading) {
-    return (
-      <div className='flex items-center justify-center min-h-screen bg-gray-50'>
-        <div className='text-center'>
-          <Loader2 className='w-8 h-8 animate-spin mx-auto mb-4 text-blue-600' />
-          <p className='text-gray-600'>Memuat data kapal...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error && !isLoading) {
-    return (
-      <div className='flex items-center justify-center min-h-screen bg-gray-50'>
-        <div className='text-center'>
-          <p className='text-red-600 mb-4'>Error: {error}</p>
-          <button
-            onClick={() => router.back()}
-            className='inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50'
-          >
-            <ArrowLeft className='w-4 h-4 mr-2' />
-            Kembali
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className='bg-gray-50 min-h-screen'>
@@ -282,7 +180,7 @@ export default function BoatEditPage() {
               Kembali
             </button>
             <h1 className='text-3xl font-bold text-gray-900'>
-              Edit Detail Kapal
+              Tambah Kapal Baru
             </h1>
           </div>
         </div>
@@ -319,7 +217,7 @@ export default function BoatEditPage() {
                       htmlFor='name'
                       className='block text-sm font-medium text-gray-700 mb-1'
                     >
-                      Nama Kapal
+                      Nama Kapal *
                     </label>
                     <input
                       type='text'
@@ -340,7 +238,7 @@ export default function BoatEditPage() {
                         htmlFor='type'
                         className='block text-sm font-medium text-gray-700 mb-1'
                       >
-                        Tipe Kapal
+                        Tipe Kapal *
                       </label>
                       <input
                         type='text'
@@ -357,10 +255,32 @@ export default function BoatEditPage() {
 
                     <div>
                       <label
+                        htmlFor='category'
+                        className='block text-sm font-medium text-gray-700 mb-1'
+                      >
+                        Kategori
+                      </label>
+                      <select
+                        id='category'
+                        value={formData.category}
+                        onChange={(e) =>
+                          handleInputChange('category', e.target.value)
+                        }
+                        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+                      >
+                        <option value='wisata'>Wisata</option>
+                        <option value='transportasi'>Transportasi</option>
+                        <option value='nelayan'>Nelayan</option>
+                        <option value='kargo'>Kargo</option>
+                      </select>
+                    </div>
+
+                    <div>
+                      <label
                         htmlFor='capacity'
                         className='block text-sm font-medium text-gray-700 mb-1'
                       >
-                        Kapasitas
+                        Kapasitas *
                       </label>
                       <input
                         type='number'
@@ -378,7 +298,9 @@ export default function BoatEditPage() {
                         required
                       />
                     </div>
+                  </div>
 
+                  <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     <div>
                       <label
                         htmlFor='duration'
@@ -395,12 +317,9 @@ export default function BoatEditPage() {
                         }
                         className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='e.g., 4 jam'
-                        required
                       />
                     </div>
-                  </div>
 
-                  <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
                     <div>
                       <label
                         htmlFor='price'
@@ -417,7 +336,6 @@ export default function BoatEditPage() {
                         }
                         className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='e.g., Rp 2.500.000'
-                        required
                       />
                     </div>
 
@@ -443,28 +361,6 @@ export default function BoatEditPage() {
                         }
                         className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='0.0 - 5.0'
-                        required
-                      />
-                    </div>
-
-                    <div>
-                      <label
-                        htmlFor='reviews'
-                        className='block text-sm font-medium text-gray-700 mb-1'
-                      >
-                        Jumlah Ulasan
-                      </label>
-                      <input
-                        type='number'
-                        id='reviews'
-                        value={formData.reviews}
-                        onChange={(e) =>
-                          handleInputChange('reviews', parseInt(e.target.value))
-                        }
-                        className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
-                        placeholder='Jumlah ulasan'
-                        min='0'
-                        required
                       />
                     </div>
                   </div>
@@ -474,7 +370,7 @@ export default function BoatEditPage() {
                       htmlFor='description'
                       className='block text-sm font-medium text-gray-700 mb-1'
                     >
-                      Deskripsi
+                      Deskripsi *
                     </label>
                     <textarea
                       id='description'
@@ -486,6 +382,25 @@ export default function BoatEditPage() {
                       className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                       placeholder='Deskripsikan kapal Anda...'
                       required
+                    />
+                  </div>
+
+                  <div>
+                    <label
+                      htmlFor='image'
+                      className='block text-sm font-medium text-gray-700 mb-1'
+                    >
+                      Gambar Utama
+                    </label>
+                    <input
+                      type='text'
+                      id='image'
+                      value={formData.image}
+                      onChange={(e) =>
+                        handleInputChange('image', e.target.value)
+                      }
+                      className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
+                      placeholder='URL atau path gambar utama'
                     />
                   </div>
                 </div>
@@ -549,7 +464,6 @@ export default function BoatEditPage() {
                         }
                         className='flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='Nama fasilitas'
-                        required
                       />
                       <select
                         value={feature.icon}
@@ -607,7 +521,6 @@ export default function BoatEditPage() {
                         }
                         className='flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='Item yang disertakan'
-                        required
                       />
                       {formData.includes.length > 1 && (
                         <button
@@ -651,7 +564,6 @@ export default function BoatEditPage() {
                         }
                         className='flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                         placeholder='Nama destinasi'
-                        required
                       />
                       {formData.destinations.length > 1 && (
                         <button
@@ -702,7 +614,6 @@ export default function BoatEditPage() {
                           }
                           className='w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500'
                           placeholder={`Masukkan ${key.toLowerCase()}`}
-                          required
                         />
                       </div>
                     )
@@ -726,7 +637,7 @@ export default function BoatEditPage() {
                     ) : (
                       <>
                         <Save className='w-4 h-4 mr-2 inline' />
-                        Simpan Perubahan
+                        Tambah Kapal
                       </>
                     )}
                   </button>
@@ -742,8 +653,8 @@ export default function BoatEditPage() {
                 </div>
 
                 <div className='mt-6 pt-4 border-t text-sm text-gray-500'>
-                  <p>• Pastikan semua data sudah benar sebelum menyimpan</p>
-                  <p>• Perubahan akan langsung terlihat setelah disimpan</p>
+                  <p>• Field dengan tanda (*) wajib diisi</p>
+                  <p>• Data akan langsung tersimpan setelah submit</p>
                 </div>
               </div>
             </div>

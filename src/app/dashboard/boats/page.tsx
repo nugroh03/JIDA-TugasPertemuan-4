@@ -60,10 +60,12 @@ export default function ManageBoatsPage() {
               Tambah, edit, atau hapus data kapal dari armada Anda.
             </p>
           </div>
-          <button className='mt-4 md:mt-0 flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg'>
-            <PlusCircle className='h-5 w-5 mr-2' />
-            Tambah Kapal
-          </button>
+          <Link href='/dashboard/boats/add-boat'>
+            <button className='mt-4 md:mt-0 flex items-center bg-blue-600 text-white px-4 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg'>
+              <PlusCircle className='h-5 w-5 mr-2' />
+              Tambah Kapal
+            </button>
+          </Link>
         </div>
 
         {/* Stat Cards */}

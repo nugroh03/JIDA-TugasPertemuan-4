@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Ocean Explorer",
+    "name": "Ocean Explorer New",
     "type": "Kapal Wisata",
     "category": "wisata",
     "capacity": 25,
-    "price": "Rp 2.500.000",
+    "price": "Rp 3.000.000",
     "priceNum": 2500000,
     "image": "/boats/ocean_explore.png",
     "gallery": [
@@ -17,12 +17,30 @@
     "reviews": 24,
     "description": "Ocean Explorer adalah kapal wisata mewah yang sempurna untuk menjelajahi keindahan laut Indonesia. Dengan desain modern dan fasilitas lengkap, kapal ini menawarkan pengalaman berlayar yang tak terlupakan.",
     "features": [
-      { "name": "Wi-Fi Gratis", "icon": "wifi" },
-      { "name": "AC", "icon": "wind" },
-      { "name": "Katering", "icon": "utensils" },
-      { "name": "Sound System", "icon": "music" },
-      { "name": "Peralatan Keselamatan", "icon": "shield" },
-      { "name": "GPS Navigation", "icon": "anchor" }
+      {
+        "name": "Wi-Fi Gratis",
+        "icon": "wifi"
+      },
+      {
+        "name": "AC",
+        "icon": "wind"
+      },
+      {
+        "name": "Katering",
+        "icon": "utensils"
+      },
+      {
+        "name": "Sound System",
+        "icon": "music"
+      },
+      {
+        "name": "Peralatan Keselamatan",
+        "icon": "shield"
+      },
+      {
+        "name": "GPS Navigation",
+        "icon": "anchor"
+      }
     ],
     "specifications": {
       "Panjang": "15 meter",
@@ -67,12 +85,30 @@
     "reviews": 31,
     "description": "Fishing Master adalah kapal pancing profesional yang dilengkapi dengan peralatan mancing terbaik. Cocok untuk para pecinta mancing yang ingin merasakan sensasi memancing di laut lepas.",
     "features": [
-      { "name": "Fish Finder", "icon": "anchor" },
-      { "name": "Peralatan Pancing", "icon": "shield" },
-      { "name": "Cooler Box", "icon": "fuel" },
-      { "name": "Tenda Pelindung", "icon": "wind" },
-      { "name": "Umpan Hidup", "icon": "utensils" },
-      { "name": "Sound System", "icon": "music" }
+      {
+        "name": "Fish Finder",
+        "icon": "anchor"
+      },
+      {
+        "name": "Peralatan Pancing",
+        "icon": "shield"
+      },
+      {
+        "name": "Cooler Box",
+        "icon": "fuel"
+      },
+      {
+        "name": "Tenda Pelindung",
+        "icon": "wind"
+      },
+      {
+        "name": "Umpan Hidup",
+        "icon": "utensils"
+      },
+      {
+        "name": "Sound System",
+        "icon": "music"
+      }
     ],
     "specifications": {
       "Panjang": "12 meter",
@@ -101,12 +137,12 @@
   },
   {
     "id": 3,
-    "name": "Sunset Cruiser",
+    "name": "Sunset Cruiser Baru",
     "type": "Kapal Wisata",
     "category": "wisata",
     "capacity": 35,
-    "price": "Rp 3.200.000",
-    "priceNum": 3200000,
+    "price": "Rp 3.000.000",
+    "priceNum": 3000000,
     "image": "/boats/sunset_cruiser.png",
     "gallery": [
       "/boats/sunset_cruiser.png",
@@ -117,12 +153,30 @@
     "reviews": 18,
     "description": "Sunset Cruiser adalah kapal wisata premium yang dirancang khusus untuk menikmati sunset dan acara-acara spesial. Dengan deck yang luas dan fasilitas mewah, kapal ini perfect untuk celebration.",
     "features": [
-      { "name": "Bar & Lounge", "icon": "utensils" },
-      { "name": "DJ Sound System", "icon": "music" },
-      { "name": "AC Lounge", "icon": "wind" },
-      { "name": "Wi-Fi Premium", "icon": "wifi" },
-      { "name": "Sunset Deck", "icon": "shield" },
-      { "name": "LED Lighting", "icon": "anchor" }
+      {
+        "name": "Bar & Lounge",
+        "icon": "utensils"
+      },
+      {
+        "name": "DJ Sound System",
+        "icon": "music"
+      },
+      {
+        "name": "AC Lounge",
+        "icon": "wind"
+      },
+      {
+        "name": "Wi-Fi Premium",
+        "icon": "wifi"
+      },
+      {
+        "name": "Sunset Deck",
+        "icon": "shield"
+      },
+      {
+        "name": "LED Lighting",
+        "icon": "anchor"
+      }
     ],
     "specifications": {
       "Panjang": "18 meter",
@@ -167,10 +221,22 @@
     "reviews": 27,
     "description": "Kapal pancing laut dalam untuk menangkap ikan besar dengan peralatan profesional",
     "features": [
-      { "name": "Deep Sea Equipment", "icon": "anchor" },
-      { "name": "Sonar", "icon": "shield" },
-      { "name": "Live Bait Tank", "icon": "fuel" },
-      { "name": "Fighting Chair", "icon": "wind" }
+      {
+        "name": "Deep Sea Equipment",
+        "icon": "anchor"
+      },
+      {
+        "name": "Sonar",
+        "icon": "shield"
+      },
+      {
+        "name": "Live Bait Tank",
+        "icon": "fuel"
+      },
+      {
+        "name": "Fighting Chair",
+        "icon": "wind"
+      }
     ],
     "specifications": {
       "Panjang": "14 meter",
@@ -213,10 +279,22 @@
     "reviews": 22,
     "description": "Kapal wisata untuk island hopping dan snorkeling di pulau-pulau eksotis",
     "features": [
-      { "name": "Snorkeling Gear", "icon": "shield" },
-      { "name": "Beach Landing", "icon": "anchor" },
-      { "name": "Lunch Package", "icon": "utensils" },
-      { "name": "Photo Service", "icon": "music" }
+      {
+        "name": "Snorkeling Gear",
+        "icon": "shield"
+      },
+      {
+        "name": "Beach Landing",
+        "icon": "anchor"
+      },
+      {
+        "name": "Lunch Package",
+        "icon": "utensils"
+      },
+      {
+        "name": "Photo Service",
+        "icon": "music"
+      }
     ],
     "specifications": {
       "Panjang": "13 meter",
@@ -259,10 +337,22 @@
     "reviews": 35,
     "description": "Kapal wisata ramah keluarga dengan fasilitas khusus untuk anak-anak",
     "features": [
-      { "name": "Kid Safety", "icon": "shield" },
-      { "name": "Family Deck", "icon": "anchor" },
-      { "name": "Games", "icon": "music" },
-      { "name": "Snacks", "icon": "utensils" }
+      {
+        "name": "Kid Safety",
+        "icon": "shield"
+      },
+      {
+        "name": "Family Deck",
+        "icon": "anchor"
+      },
+      {
+        "name": "Games",
+        "icon": "music"
+      },
+      {
+        "name": "Snacks",
+        "icon": "utensils"
+      }
     ],
     "specifications": {
       "Panjang": "11 meter",
@@ -305,10 +395,22 @@
     "reviews": 19,
     "description": "Kapal pancing sport fishing dengan standar turnamen untuk pengalaman memancing premium",
     "features": [
-      { "name": "Tournament Grade", "icon": "shield" },
-      { "name": "Multiple Rods", "icon": "anchor" },
-      { "name": "Fish Cleaning", "icon": "utensils" },
-      { "name": "Ice Storage", "icon": "fuel" }
+      {
+        "name": "Tournament Grade",
+        "icon": "shield"
+      },
+      {
+        "name": "Multiple Rods",
+        "icon": "anchor"
+      },
+      {
+        "name": "Fish Cleaning",
+        "icon": "utensils"
+      },
+      {
+        "name": "Ice Storage",
+        "icon": "fuel"
+      }
     ],
     "specifications": {
       "Panjang": "16 meter",
@@ -351,10 +453,22 @@
     "reviews": 12,
     "description": "Yacht mewah dengan fasilitas premium untuk acara eksklusif dan perayaan spesial",
     "features": [
-      { "name": "VIP Cabin", "icon": "shield" },
-      { "name": "Chef Service", "icon": "utensils" },
-      { "name": "Jacuzzi", "icon": "wind" },
-      { "name": "Helicopter Pad", "icon": "anchor" }
+      {
+        "name": "VIP Cabin",
+        "icon": "shield"
+      },
+      {
+        "name": "Chef Service",
+        "icon": "utensils"
+      },
+      {
+        "name": "Jacuzzi",
+        "icon": "wind"
+      },
+      {
+        "name": "Helicopter Pad",
+        "icon": "anchor"
+      }
     ],
     "specifications": {
       "Panjang": "25 meter",
@@ -378,5 +492,40 @@
       "Luxury Resorts"
     ],
     "duration": "12 jam"
+  },
+  {
+    "id": 9,
+    "name": "Kapal Baru utama",
+    "type": "Yacth",
+    "category": "wisata",
+    "capacity": 1,
+    "duration": "4",
+    "price": "Rp. 3.000.000",
+    "rating": 4,
+    "reviews": 0,
+    "description": "kapal",
+    "image": "",
+    "gallery": [],
+    "features": [
+      {
+        "name": "Wifi",
+        "icon": "wifi"
+      }
+    ],
+    "includes": [
+      "Makan"
+    ],
+    "destinations": [
+      "Mandangin"
+    ],
+    "specifications": {
+      "Panjang": "19 m",
+      "Lebar": "7 m",
+      "Mesin": "2 x 250 HP",
+      "Kecepatan": "30 Knot",
+      "Bahan Bakar": "Solar",
+      "Toilet": "2 Unit"
+    },
+    "priceNum": 3000000
   }
 ]
